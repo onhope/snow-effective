@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>snow effective</title>
+</head>
+<body>
+  <script>
+    //  눈송이 만드는 함수
+    function createSnow() {
+      const el = document.createElement("div");
+      el.classList.add("snow");
+      el.style.marginLeft = randomPosition() + 'px';
+      document.body.appendChild(el);
+    }
+    // 눈내리는 위치 조정하는 함수
+    function randomPosition() {
+      // 웹 브라우저의 너비를 넘어가지 않는 범위 내에서 생성
+      return Math.floor(Math.random() * window.innerWidth);
+    }
+    // 반복문으로 눈송이 여러개 뿌리기
+    for(let i=0; i<=300; i++) {
+      createSnow();
+    }
+  </script>
+</body>
+</html>
